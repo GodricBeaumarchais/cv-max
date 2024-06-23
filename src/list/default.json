@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0,
+        "title": "Impatient",
+        "description": "Je suis souvent impatient de passer a l'action et ai du mal a attendre les gens et les longues procédure, mais sait me controlé pour travaillé en équipe."
+    },
+    {
+        "id": 1,
+        "title": "Intrensigeant",
+        "description": "J'ai du mal a supporté les lignes de code inutiles et les fonctionnalités mal optimisée."
+    },
+    {
+        "id": 2,
+        "title": "Flemard",
+        "description": "Chacune de mes lignes de code est optimisé pour ne pas être rettapé une bonne réflexion évite souvent de taper beaucoup de ligne de code, mieux je travaille, moins je travaille."
+    }
+]
+    

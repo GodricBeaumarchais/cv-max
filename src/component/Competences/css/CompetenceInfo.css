@@ -1,0 +1,128 @@
+.competence-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 270px;
+  
+}
+
+.icon-competences-info{
+    display: flex;
+    font-size: 128px;
+    padding-top: 0px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+
+.competence-icon-contener{
+    display: flex;
+    position: relative;
+    height: 100%;
+    padding: 30px;
+    margin: 0px;
+    align-items: center;
+    color: var(--purple-light);
+}
+
+.comp-info-title{
+    font-family: AllertaStencil;
+    font-weight: 400;
+}
+
+.competence-icon-contener::after{
+    content: "";
+    content: ''; /* Nécessaire pour les pseudo-éléments ::before et ::after */
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-180deg); /* Centre horizontalement et applique la rotation */
+    width: 80%;
+    height: 20%;    
+    opacity: 0.6;
+    background: var(--main-blue); /* Exemple de dégradé, ajuster les couleurs réelles */
+    filter: blur(10px); /* Ajustez le niveau de flou selon les spécifications réelles */
+    border-radius: 50%;
+    z-index: -1; /* Place le pseudo-élément derrière le conteneur */
+    
+
+}
+
+.competence-text-contener{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.text-competence-info{
+    font-size: 22px;
+    margin: 2vw;
+    padding-left: 30px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.competence-info-contener {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  animation: appear-info-competence 1.5s ease-in forwards;
+}
+
+.test-s{
+  position: relative;
+  top: -33px;
+  font-size: 1vw;
+}
+
+.competence-info-bar-contener{
+  width: 100%;
+  height: 1vw;
+  min-height: 11px;
+  align-content:start;
+  align-items: start;
+}
+
+.competence-info-bar-back{
+  width: 83%;
+  height: 1vw;
+  min-height: 11px;
+  position: absolute;
+  font-size: clamp(10px, 1vw, 25px);
+  margin: auto;
+  background-color: transparent;
+  align-self: flex-start;
+}
+
+
+.competence-info-bar{
+  min-height: 11px;
+  height: 1vw;
+  margin: auto;
+  margin-left: 0;
+}
+
+@media  (min-width: 1000px) {
+  .competence-info-bar-back{
+      width: 50vw;
+  }
+
+}
+
+
+@keyframes appear-info-competence {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}

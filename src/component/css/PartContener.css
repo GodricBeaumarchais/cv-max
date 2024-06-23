@@ -1,0 +1,26 @@
+
+.part-title{
+    position: relative;
+    font-weight: 400;
+    font-size:  50px;
+    font-family: AllertaStencil;
+
+    
+}
+ 
+.part-contener{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+    
+}
+
+
+
+.part-title:nth-child(1){
+    margin-top: 120px;
+}

@@ -1,0 +1,11 @@
+.project-part-contener{
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.title-part{
+    text-align: left;
+    margin-bottom: 3vw;
+}

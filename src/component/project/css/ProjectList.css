@@ -1,0 +1,49 @@
+.p-list {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    position: relative; /* Ajoutez cette ligne */
+    width: 1325px;
+    transition: all 0.7s ;
+    
+}
+
+.p-list-contener{
+    overflow: hidden;
+}
+
+.project-part-contener-slider{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    position: relative; /* Ajoutez cette ligne */
+    overflow: hidden;
+}
+
+.project-part-contener-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    position: relative; /* Ajoutez cette ligne */
+    overflow: hidden;
+}
+
+.arrow-on{
+    margin-top: 25px;
+    transform: scale(0.5);
+}
+
+.arrow-off{
+    margin-top: 25px;
+    transform: scale(0.5);
+    opacity: 0.5;
+}
+
+
+.arrow-on:hover{
+    transform: scale(0.6);
+    cursor: pointer;
+}

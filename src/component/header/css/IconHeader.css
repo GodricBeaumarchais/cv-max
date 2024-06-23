@@ -1,0 +1,58 @@
+.header-icon-appear{
+    fill: #eee;
+    transition: all 0.5s ease-in-out;
+    animation: appear 0.5s ease-out backwards;
+    font-size: clamp(20px, 6vw, 60px);
+    transform: rotate(0deg);
+    
+  }
+  
+  .header-icon-desappear{
+    fill: #eee;
+    animation: desappear 0.5s ease-out backwards;
+    font-size: clamp(20px, 6vw, 60px);
+    transform: rotate(0deg);
+    
+  }
+
+  .header-icon-appear:hover{
+    fill: rgb(75, 209, 164);;
+  }
+  
+  .icon-button {
+    
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+    
+    
+  }
+
+  @keyframes appear{
+    0%{
+        fill: rgb(75, 209, 164);;
+        transform: rotate(-90deg) translateY(100%);
+    }
+    50%{
+        fill: rgb(75, 209, 164);;
+        transform: rotate(-90deg) translateY(0%);   
+    }
+    100%{
+        fill: #eee;;
+        transform: rotate(0deg) translateY(0%);
+    }
+  }
+
+  @keyframes desappear{
+    0%{
+        fill: rgb(75, 209, 164);;
+        transform: rotate(-0deg) translateY(0%);
+    }
+    50%{
+        fill: rgb(75, 209, 164);;
+        transform: rotate(-90deg) translateY(0%);   
+    }
+    100%{
+        fill: rgb(75, 209, 164);;
+        transform: rotate(-90deg) translateY(100%);
+    }
+  }

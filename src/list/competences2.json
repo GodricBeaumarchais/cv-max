@@ -1,0 +1,106 @@
+{
+    "systeme_et_langage": [
+        {
+            "id": 0,
+            "title": "Ocaml",
+            "description": "Langage de programmation fonctionnel et impératif. Il combine une syntaxe simple et concise avec des fonctionnalités avancées comme le typage fort et la programmation orientée objet. Je l'ai appris au cours de ma L3.",
+            "mark": "70"
+        },
+        {
+            "id": 1,
+            "title": "Python",
+            "description": "Langage de programmation interprété open-source, orienté objet, utilisé pour de nombreux types de développement de logiciels. Je l'ai appris et utilisé tout au long de ma licence.",
+            "mark": "85"
+        },
+        {
+            "id": 2,
+            "title": "Java",
+            "description": "Langage de programmation orienté objet populaire et polyvalent. Il est utilisé pour créer des applications web, des applications mobiles et des jeux. Je l'utilise depuis le collège et l'ai réappris à la fac.",
+            "mark": "75"
+        },
+        {
+            "id": 3,
+            "title": "C++",
+            "description": "Langage de programmation impératif et compilé hautement performant. Je l'ai notamment appris aux côtés du C tout au long de ma fac dans divers projets et contextes. En plus de maîtriser ce langage, j'ai aussi de grandes compétences en C et C# et suis très à l'aise avec ce genre de langage proche de la machine car possédant une grande compréhension de leur fonctionnement réel.",
+            "mark": "95"
+        },
+        {
+            "id": 4,
+            "title": "SQL",
+            "description": "Le langage de requête utilisé pour interagir avec des bases de données relationnelles. Utilisé pour créer, mettre à jour et gérer des bases de données. Je l'ai appris lors de ma licence et l'utilise dans la plupart de mes projets backend, me permettant ainsi d'utiliser toutes les bases de données relationnelles.",
+            "mark": "90"
+        },
+        {
+            "id": 5,
+            "title": "SystemUnix",
+            "description": "Système d'exploitation open-source basé sur Unix. Il est conçu pour être simple, flexible et extensible, tout en offrant des fonctionnalités avancées pour les développeurs expérimentés. J'ai beaucoup d'expérience dessus, ce qui me permet d'être à l'aise même sur les déploiements les plus complexes.",
+            "mark": "100"
+        },
+        {
+            "id": 6,
+            "title": "TypeScript",
+            "description": "Langage de programmation open-source développé et maintenu par Microsoft. Il est un sur-ensemble de JavaScript qui ajoute des fonctionnalités de typage statique optionnel et des fonctionnalités orientées objet. Je l'ai appris en utilisant React et NestJs. Je l'utilise sur la plupart de mes applications web et scripts utilitaires, backend comme frontend. Il est très polyvalent et je l'associe notamment avec des frameworks tels que NestJs, ExpressJs, Next, etc. Ma maîtrise de ce langage implique aussi une grande maîtrise de JavaScript.",
+            "mark": "100"
+        }
+    ],
+    "devops": [
+        {
+            "id": 7,
+            "title": "Git",
+            "description": "Système de contrôle de version distribué open-source conçu pour gérer toutes sortes de projets, notamment en groupe. Indispensable pour tout projet, il est pleinement maîtrisé par mes soins.",
+            "mark": "90"
+        },
+        {
+            "id": 8,
+            "title": "Docker",
+            "description": "Plateforme open-source pour le développement, l'exécution et le déploiement d'applications. Elle permet aux développeurs d'isoler leurs applications dans des conteneurs, qui peuvent être facilement déployés sur n'importe quel serveur. Indispensable pour tout déploiement et développement, je l'utilise pour tous mes projets afin d'être sûr qu'ils soient exécutables sur chaque machine et déployables facilement de manière sécurisée.",
+            "mark": "100"
+        },
+        {
+            "id": 9,
+            "title": "Kubernetes",
+            "description": "Plateforme open-source qui permet de gérer des conteneurs Docker et des applications distribuées. Il est conçu pour être simple, flexible et extensible, tout en offrant des fonctionnalités avancées pour les développeurs expérimentés. Je l'ai appris lors de mon travail en tant qu'ingénieur DevOps et sais m'en servir pour héberger tout type de service de manière pleinement sécurisée, car il permet aussi de fournir de manière cryptée les autorisations et données sensibles à toutes vos applications.",
+            "mark": "90"
+        },
+        {
+            "id": 10,
+            "title": "Bash",
+            "description": "Interpréteur de commandes Unix qui exécute les commandes entrées par l'utilisateur et offre une interface en ligne de commande pour interagir avec le système d'exploitation. De plus, j'ai appris au cours de ma licence à créer des scripts afin de manipuler des systèmes Unix.",
+            "mark": "75"
+        }
+    ],
+    "backend": [
+        {
+            "id": 11,
+            "title": "MongoDB",
+            "description": "Base de données NoSQL open-source qui stocke les données sous forme de documents JSON. Elle est conçue pour être flexible, évolutive et performante.",
+            "mark": "75"
+        },
+        {
+            "id": 12,
+            "title": "Prisma",
+            "description": "Outil open-source qui permet de gérer les bases de données et de générer du code pour les applications Node.js et TypeScript. Il est conçu pour être simple, flexible et extensible, tout en offrant des fonctionnalités avancées pour les développeurs expérimentés. Je l'ai appris en utilisant NestJs. Il me permet de gérer mes bases de données de manière simple, sécurisée, optimisée et rapide.",
+            "mark": "100"
+        },
+        {
+            "id": 13,
+            "title": "GraphQL",
+            "description": "Langage de requête open-source qui permet de demander des données à un serveur. Il est conçu pour être simple, flexible et extensible, tout en offrant des fonctionnalités avancées pour les développeurs expérimentés. Je l'ai appris en utilisant NestJs. Il me permet de gérer mes API de manière simple, sécurisée, optimisée et rapide.",
+            "mark": "100"
+        }
+    ],
+    "frontend": [
+        {
+            "id": 14,
+            "title": "NextJs",
+            "description": "Framework React open-source qui permet de créer des applications web performantes et évolutives. Il est conçu pour être facile à utiliser et à apprendre, tout en offrant des fonctionnalités avancées pour les développeurs expérimentés. Je l'ai appris en utilisant React. Ce framework implique aussi mes compétences en HTML et CSS.",
+            "mark": "70"
+        },
+        {
+            "id": 15,
+            "title": "Angular",
+            "description": "Framework open-source développé par Google pour créer des applications web dynamiques et interactives. Il est conçu pour être simple, flexible et extensible, tout en offrant des fonctionnalités avancées pour les développeurs expérimentés. Je l'ai appris en utilisant React. Ce framework implique aussi mes compétences en HTML et CSS.",
+            "mark": "70"
+        }
+    ]
+}

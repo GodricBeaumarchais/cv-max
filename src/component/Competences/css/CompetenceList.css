@@ -1,0 +1,16 @@
+.competence-contener{
+    padding: 20px;
+    padding: 0px;
+    display:    flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.anim-competence-contener-on{
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+

@@ -1,0 +1,100 @@
+.talent-case{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+    transform: translateX(-1px);
+    border-left: solid 1px ;
+}
+
+.talent-case-title{
+    font-size: clamp(20px, 3vw, 23px);
+}
+
+.talent-case-text{
+    font-size: clamp(15px, 1vw, 23px);
+    margin: 1vw;
+}
+
+
+.talent-case-r::after{
+    content: "";
+    text-align: center;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    font-size: clamp(15px, 1vw, 23px);
+    background-color: rgb(255, 89, 89);
+    transform: translateX(0%);
+    animation: slide-out-talent-case 1s ease-in  forwards;
+}
+
+
+
+.talent-case-g::after{
+    content: "";
+    text-align: center;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    font-size: clamp(15px, 1vw, 23px);
+    background-color: rgb(89, 255, 117);
+    transform: translateX(0%);
+    animation: slide-out-talent-case 1s ease-in  forwards;
+}
+
+
+
+@keyframes slide-out-talent-case{
+    75%{
+        transform: translateY(85%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.talent-case-text-button{
+    color: #222;
+}
+
+.talent-case-button{
+    background-color: #222;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+    border: none;
+
+}
+
+.button-txt{
+    color: #ddd;
+    font-size: 2vw;
+}
+
+@media  (max-width: 900px) {
+    .talent-case{
+        border-top: solid 1px ;
+    }
+  
+    .talent-case-text{
+        margin-bottom: 5vw;
+    }
+
+    .talent-case-g{
+        padding-left: 15vw;
+        padding-right: 15vw;
+    }
+    
+
+  
+  }

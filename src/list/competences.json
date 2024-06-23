@@ -1,0 +1,177 @@
+[
+    {
+    "id": 0,
+    "title": "Git",
+    "icon": "FaGit",
+    "description": "Système de contrôle de version distribué open source conçu pour gérer toutes sortes de projets, notamment en groupe. Je l'ai appris au cours de divers projets.",
+    "mark": "90"
+    },
+    {
+    "id": 1,
+    "title": "Ocaml",
+    "icon": "SiOcaml",
+    "description": "Langage de programmation fonctionnel et impératif. Il combine une syntaxe simple et concise avec des fonctionnalités avancées comme le typage fort et la programmation orientée objet. Je l'ai appris au cours de ma L3.",
+    "mark": "70"
+    },
+    {
+    "id": 2,
+    "title": "Python",
+    "icon": "FaPython",
+    "description": "Langage de programmation interprété open-source, orienté objet, utilisé pour de nombreux types de développement de logiciels. Je l'ai appris et utilisé tout au long de ma licence.",
+    "mark": "85"
+    },
+    {
+    "id": 3,
+    "title": "Java",
+    "icon": "FaJava",
+    "description": "Langage de programmation orienté objet populaire et polyvalent. Il est utilisé pour créer des applications Web, des applications mobiles et des jeux. Je l'utilise depuis le collège et l'ai réappris à la fac.",
+    "mark": "75"
+    },
+    {
+    "id": 4,
+    "title": "Javascript",
+    "icon": "IoLogoJavascript",
+    "description": "Langage de programmation léger, orienté objet très populaire. Il est principalement utilisé pour créer des sites Web interactifs et des applications Web. Je l'ai utilisé au cours de divers projets en React/React Native et pour créer des bots en ligne.",
+    "mark": "100"
+    },
+    {
+    "id": 5,
+    "title": "Docker",
+    "icon": "FaDocker",
+    "description": "Plateforme open source pour le développement, l'exécution et le déploiement d'applications. Elle permet aux développeurs d'isoler leurs applications dans des conteneurs, qui peuvent être facilement déployés sur n'importe quel serveur. Je l'ai notamment utilisée pour la mise en ligne du serveur hébergeant ce site possédant un reverse proxy.",
+    "mark": "100"
+    },
+    {
+    "id": 6,
+    "title": "Html",
+    "icon": "FaHtml5",
+    "description": "Langage de balisage utilisé pour créer des pages web. Il définit le contenu d'une page web et comment il est affiché et formaté. Je l'ai appris notamment pendant la création de divers sites/Appweb.",
+    "mark": "87"
+    },
+    {
+    "id": 7,
+    "title": "Css",
+    "icon": "FaCss3",
+    "description": "Langage de feuilles de style utilisé pour créer des pages web. Il définit la présentation et le formatage du contenu d'une page web. Je l'ai appris notamment pendant la création de divers sites/Appweb.",
+    "mark": "79"
+    },
+    {
+        "id": 8,
+        "title": "NodeJs",
+        "icon": "FaNodeJs",
+        "description": "Environnement d'exécution JavaScript qui permet aux développeurs de créer des applications côté serveur avec JavaScript. C'est une plate-forme puissante et fiable qui exécute des applications JavaScript à l'échelle du serveur. Appris durant le développement de plusieurs applications mobiles/web et divers programmes.",
+        "mark": "100"
+    },
+    {
+        "id": 9,
+        "title": "React",
+        "icon": "FaReact",
+        "description": "Bibliothèque JavaScript open source pour créer des applications web et mobiles à l'aide d'interfaces utilisateur. Il est conçu pour rendre les mises à jour de l'interface utilisateur et des données en temps réel plus faciles. Je l'ai appris en développant des applications web et des sites internet.",
+        "mark": "100"
+    },
+    {
+        "id": 10,
+        "title": "Bash",
+        "icon": "SiGnubash",
+        "description": "Interpréteur de commandes Unix qui exécute les commandes entrées par l'utilisateur et offre une interface en ligne de commande pour interagir avec le système d'exploitation. De plus, j'ai appris au cours de ma licence à créer des scripts afin de manipuler des systèmes Unix.",
+        "mark": "75"
+    },
+    {
+        "id": 11,
+        "title": "Cpp",
+        "icon": "TbBrandCpp",
+        "description": "Langage de programmation impératif et compilé hautement performant. Je l'ai notamment appris aux côtés du C tout au long de ma fac dans divers projets et contextes.",
+        "mark": "95"
+    },
+    {
+        "id": 12,
+        "title": "SQL",
+        "icon": "SiMysql",
+        "description": "Le langage de requête utilisé pour interagir avec des bases de données relationnelles est utilisé pour créer, mettre à jour et gérer des bases de données. Je l'ai principalement appris lors de ma licence.",
+        "mark": "65"
+    },
+    {
+        "id": 13,
+        "title": "NestJs",
+        "icon": "SiNestjs",
+        "description": "Nest (NestJS) est un framework permettant de construire des applications côté serveur Node.js efficaces et évolutives. Il utilise le JavaScript progressif, est construit avec et supporte entièrement TypeScript (tout en permettant aux développeurs de coder en JavaScript pur), combine des éléments de la POO (programmation orientée objet), de la PF (programmation fonctionnelle) et de la FRP (programmation fonctionnelle réactive).",
+        "mark": "100"
+    },
+    {
+        "id": 14,
+        "title": "TypeScript",
+        "icon": "SiTypescript",
+        "description": "Langage de programmation open-source développé et maintenu par Microsoft. Il est un sur-ensemble de JavaScript qui ajoute des fonctionnalités de typage statique optionnel et des fonctionnalités orientées objet. Je l'ai appris en utilisant React et NestJs.",
+        "mark": "100"
+    },
+    {
+        "id": 15,
+        "title": "MongoDB",
+        "icon": "SiMongodb",
+        "description": "Base de données NoSQL open-source qui stocke les données sous forme de documents JSON. Elle est conçue pour être flexible, évolutive et performante. Je l'ai appris en utilisant NestJs.",
+        "mark": "75"
+    },
+    {
+        "id": 16,
+        "title": "PostgreSQL",
+        "icon": "SiPostgresql",
+        "description": "Système de gestion de base de données relationnelle open-source et puissant. Il est conçu pour gérer des charges de travail complexes et traiter de grandes quantités de données. Je l'ai appris en utilisant NestJs.",
+        "mark": "100"
+    },
+    {
+        "id": 17,
+        "title": "C",
+        "icon": "FaC",
+        "description": "Langage de programmation impératif et compilé. Il est largement utilisé pour le développement de systèmes d'exploitation, de logiciels embarqués et d'applications système. Je l'ai appris tout au long de ma licence.",
+        "mark": "97"
+    },
+    {
+        "id": 18,
+        "title": "C#",
+        "icon": "FaCsharp",
+        "description": "Langage de programmation orienté objet développé par Microsoft. Il est principalement utilisé pour créer des applications Windows, des applications Web et des jeux. Je l'ai appris en utilisant Unity.",
+        "mark": "80"
+    },
+    {
+        "id": 19,
+        "title": "NextJs",
+        "icon": "SiNext-dot-js",
+        "description": "Framework React open-source qui permet de créer des applications web performantes et évolutives. Il est conçu pour être facile à utiliser et à apprendre, tout en offrant des fonctionnalités avancées pour les développeurs expérimentés. Je l'ai appris en utilisant React.",
+        "mark": "70"
+    },
+    {
+        "id": 20,
+        "title": "ExpressJs",
+        "icon": "SiExpress",
+        "description": "Framework Node.js open-source qui permet de créer des applications web et mobiles côté serveur. Il est conçu pour être simple, flexible et extensible, tout en offrant des fonctionnalités avancées pour les développeurs expérimentés. Je l'ai appris en utilisant NodeJs.",
+        "mark": "100"
+    },
+    {
+        "id": 21,
+        "title": "Prisma",
+        "icon": "SiPrisma",
+        "description": "Outil open-source qui permet de gérer les bases de données et de générer du code pour les applications Node.js et TypeScript. Il est conçu pour être simple, flexible et extensible, tout en offrant des fonctionnalités avancées pour les développeurs expérimentés. Je l'ai appris en utilisant NestJs.",
+        "mark": "100"
+    },
+    {
+        "id": 22,
+        "title": "SQL",
+        "icon": "SiMysql",
+        "description": "Le langage de requête utilisé pour interagir avec des bases de données relationnelles est utilisé pour créer, mettre à jour et gérer des bases de données. Je l'ai principalement appris lors de ma licence.",
+        "mark": "90"
+    },
+    {
+        "id": 23,
+        "title": "ArgoCD",
+        "icon": "SiArgo",
+        "description": "Outil open-source qui permet de déployer des applications sur Kubernetes. Il est conçu pour être simple, flexible et extensible, tout en offrant des fonctionnalités avancées pour les développeurs expérimentés. Je l'ai appris en utilisant Kubernetes.",
+        "mark": "100"
+    },
+    {
+    "id": 24,
+    "title": "Kubernetes",
+    "icon": "SiKubernetes",
+    "description": "Plateforme open-source qui permet de gérer des conteneurs et des applications distribuées. Il est conçu pour être simple, flexible et extensible, tout en offrant des fonctionnalités avancées pour les développeurs expérimentés. Je l'ai appris en utilisant Docker.",
+    "mark": "90"
+    }
+]

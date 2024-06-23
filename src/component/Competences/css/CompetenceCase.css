@@ -1,0 +1,78 @@
+.icon {
+    font-size: 60px;
+}
+
+.icon-contener {
+    position: relative;
+    display: inline-block;
+    padding: 25px;
+    color: var(--blue-light);
+    border-radius: 15px; /* Appliquer le border-radius */
+    background-color: var(--blue-dark); /* Assurez-vous que le contenu est coupé aux bords arrondis */
+    z-index: 30;
+    text-align: center; /* Centrer le texte */
+}
+
+.icon-contener::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: inherit; /* Angles arrondis pour le pseudo-élément */
+    background: var(--gradient);
+    z-index: -2; /* Place le pseudo-élément derrière */
+}
+
+.icon-contener::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: inherit; /* Angles arrondis pour le pseudo-élément */
+    background: var(--blue-dark);
+    padding: 2px; /* Crée l'espace pour la bordure */
+    box-sizing: border-box; /* Assure que le padding est inclus dans la taille */
+    z-index: -1; /* Place le pseudo-élément derrière */
+}
+.icon-contener-select {
+    position: relative;
+    display: inline-block;
+    padding: 25px;
+    color: var(--main-purple);
+    border-radius: 15px;
+    z-index: 0;
+}
+
+.icon-contener-select::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    /* Ajuster pour couvrir la bordure */
+    left: -5px;
+    /* Ajuster pour couvrir la bordure */
+    right: -5px;
+    /* Ajuster pour couvrir la bordure */
+    bottom: -5px;
+    /* Ajuster pour couvrir la bordure */
+    background: var(--gradient-reverse);
+    border-radius: inherit;
+    /* Utiliser le même border-radius */
+    z-index: -1;
+    pointer-events: none;
+}
+
+.icon-contener:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.button-cc {
+    margin: 1vw;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+}
