@@ -74,10 +74,27 @@
     text-align: left;
     margin-top: 5px;
     margin-bottom: 10px;
-    font-size: clamp(16px, 1vw, 23px);
+    height: 130px;
+    font-size: 18px;
     animation: text-appear 1s ease-in  forwards;
     padding-left: 30px;
     padding-right: 20px;
+    scrollbar-color: var(--main-purple) transparent;
+    scrollbar-width: thin;
+    overflow-y: auto;
+}
+
+.description::-webkit-scrollbar-thumb{
+    background-color: var(--main-purple);
+    border-radius: 50px;
+}
+
+.description::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+.description::-webkit-scrollbar-button {
+    display: none;
 }
 
 .link{

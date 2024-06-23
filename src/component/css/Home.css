@@ -38,6 +38,7 @@
   }
   
   .all-page{
+    position: relative;
     background-color: var(--blue-dark);
     display: flex;
     flex-direction: column;

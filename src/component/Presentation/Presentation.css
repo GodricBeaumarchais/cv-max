@@ -4,8 +4,8 @@
     font-size: 128px;
     text-align: left;
     font-weight: 400;
-    margin-left: 70px;
-    
+    margin-left: 200px;
+    animation: ease-in 0.7s appear-title;
 }
 
 .pragraph-container {
@@ -109,4 +109,17 @@
         text-align: center;
     
     }
+}
+
+
+@keyframes appear-title {
+    0% {
+        color: transparent;
+        transform: translateY(-5%);
+    }
+    100% {
+        color: #fff;
+        transform: translateY(0%);
+    }
+    
 }

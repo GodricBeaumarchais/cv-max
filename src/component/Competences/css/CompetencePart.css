@@ -1,0 +1,76 @@
+.logo_side {
+    width: 100%;
+    height: 100%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.logo_opensource {
+    width: 100%;
+    height: 100%;
+    animation: float 6s ease-in-out infinite ;
+    animation-delay: -2s;
+}
+
+.img-deco-div-logo{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-top: -18%;
+    margin-left: 80%;
+}
+
+.img-deco-div-open{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-top: -8%;
+    margin-left: 12%;
+    
+}
+.img-talent-container{
+    width: 99vw;
+    height: 100%;
+    overflow: hidden;
+    border: red solid 1px;
+    
+}
+.img-deco-div-logo::before {
+    content: ''; 
+    position: absolute;
+    transform: translateX(-10%) translateY(-45%); 
+    width: 70vw;
+    height: 170%;    
+    opacity: 0.6;
+    background: linear-gradient(160deg, var(--main-purple) 0%,var(--main-blue) 100%);
+    filter: blur(70px); 
+    border-radius: 50%;
+    z-index: -1; 
+    
+    
+} 
+
+.img-deco-div-open::before {
+    content: ''; 
+    position: absolute;
+    transform: translateX(-60%) translateY(-38%); 
+    width: 70vw;
+    height: 170%;    
+    opacity: 0.6;
+    background: linear-gradient(160deg, var(--main-purple) 0%,var(--main-blue) 100%);
+    filter: blur(70px); 
+    border-radius: 50%;
+    z-index: -1; 
+    
+} 
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}

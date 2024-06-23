@@ -50,7 +50,7 @@
 }
 
 .flip-card-back {
-  background-color: var(--purple-med-light);
+  background: linear-gradient( 304deg,  var(--purple-med-dark), var(--blue-dark));  /*var(--purple-med-dark);*/
   color: white;
   transform: rotateY(180deg);
   border-radius: 15px;

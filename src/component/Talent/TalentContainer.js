@@ -36,7 +36,7 @@ export default function TalentContainer(props) {
             <div className="talent-container-header">
                 <h1 className="talent-container-title">Qualités</h1>
             </div>
-            <InView onChange={setInView} className="talentViewContainer">
+            
 
                 <div className="talent-container-body" style={{ borderColor: color }}>
                     {list.map((item, index) => (
@@ -49,7 +49,7 @@ export default function TalentContainer(props) {
                         />
                     ))}
                 </div>
-            </InView>
+                <InView onChange={setInView} className="talentViewContainer"/>
         </div>
 
     );
