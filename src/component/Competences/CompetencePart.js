@@ -10,14 +10,15 @@ export default function CompetencePart() {
 
         <PartContener title={"Competences"} color={"green"}>
             <CompetenceList />
-            
+            <div className="img-deco-container">
                 <div className="img-deco-div-logo">
                     <img src={logo_side} alt="logo_side" className="logo_side" />
                 </div>
                 <div className="img-deco-div-open">
                     <img src={logo_opensource} alt="logo_opensource" className="logo_opensource" />
                 </div>
-            
+            </div>
+
         </PartContener >
 
 

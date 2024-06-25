@@ -9,9 +9,8 @@ export default function PartContener({ children, title }) {
             <h1 className="part-title" >
                 {title}
             </h1>
-            <div>
                 {children}
-            </div>
+            
         </div>
     )
 }

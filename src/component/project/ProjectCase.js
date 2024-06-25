@@ -35,7 +35,7 @@ export default function ProjectCase({ title, def, Presentation, Git, Site }) {
                     <span className="title">
                         {title}
                     </span>
-                    <span className="description">
+                    <span className="description" t>
                         {def}
                     </span>
                     <div className="link-contener">

@@ -1,4 +1,4 @@
-.name{
+.name {
     color: #fff;
     font-family: "AllertaStencil";
     font-size: 128px;
@@ -10,73 +10,86 @@
 
 .pragraph-container {
     width: 35vw;
-    position: relative; /* Assure que le pseudo-élément ::before est positionné relativement à ce conteneur */
+    position: relative;
+    /* Assure que le pseudo-élément ::before est positionné relativement à ce conteneur */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     margin-top: 60px;
-    z-index: 1; /* Place le conteneur au-dessus de ::before */
+    z-index: 1;
+    /* Place le conteneur au-dessus de ::before */
     margin-left: 150px;
     margin-right: 150px;
 }
 
 .pragraph-container::before {
-    content: ''; /* Nécessaire pour les pseudo-éléments ::before et ::after */
+    content: '';
+    /* Nécessaire pour les pseudo-éléments ::before et ::after */
     position: absolute;
     top: -85px;
     left: 50%;
-    transform: translateX(-50%) rotate(-180deg); /* Centre horizontalement et applique la rotation */
+    transform: translateX(-50%) rotate(-180deg);
+    /* Centre horizontalement et applique la rotation */
     width: 60vw;
-    height: 170%;    
+    height: 170%;
     opacity: 0.6;
-    background: linear-gradient(160deg, var(--main-purple) 0%, var(--main-blue) 100%); /* Exemple de dégradé, ajuster les couleurs réelles */
-    filter: blur(130px); /* Ajustez le niveau de flou selon les spécifications réelles */
+    background: linear-gradient(160deg, var(--main-purple) 0%, var(--main-blue) 100%);
+    /* Exemple de dégradé, ajuster les couleurs réelles */
+    filter: blur(130px);
+    /* Ajustez le niveau de flou selon les spécifications réelles */
     border-radius: 50%;
-    z-index: -1; /* Place le pseudo-élément derrière le conteneur */
-    
+    z-index: -1;
+    /* Place le pseudo-élément derrière le conteneur */
+
 }
-.logo-container{
+
+.logo-container {
     position: relative;
-    border: #fff solid 1px;
 }
-.logo{
-    
+
+.logo {
+
     position: absolute;
-    top: 200px;           /* Ajustez ces valeurs pour positionner le SVG */
+    top: 200px;
+    /* Ajustez ces valeurs pour positionner le SVG */
     right: 400px;
     scale: 1.3;
 }
 
-.pragraph-container:nth-child(3){
+.pragraph-container:nth-child(3) {
     align-self: flex-end;
 }
+
 .pragraph-container:nth-child(3)::before {
-    
-    background: linear-gradient(300deg, var(--main-purple) 0%, var(--main-blue) 100%); /* Exemple de dégradé, ajuster les couleurs réelles */
-    
+
+    background: linear-gradient(300deg, var(--main-purple) 0%, var(--main-blue) 100%);
+    /* Exemple de dégradé, ajuster les couleurs réelles */
+
 }
 
-.pragraph-container:nth-child(4){
+.pragraph-container:nth-child(4) {
     margin-left: 300px;
     width: 50vw;
 }
+
 .pragraph-container:nth-child(4)::before {
     width: 70vw;
-    background: linear-gradient(350deg, var(--main-purple) 0%, var(--main-blue) 100%); /* Exemple de dégradé, ajuster les couleurs réelles */
+    background: linear-gradient(350deg, var(--main-purple) 0%, var(--main-blue) 100%);
+    /* Exemple de dégradé, ajuster les couleurs réelles */
 
 
 }
-.PresentationTile{
+
+.PresentationTile {
     text-align: left;
     margin-top: 5vw;
     margin-bottom: 3vw;
-    font-size: clamp( 20px, 2.5vw, 80px);
+    font-size: clamp(20px, 2.5vw, 80px);
 
 }
 
-
-.txt{
+.txt {
     font-size: 20px;
     text-align: left;
     margin-left: 1vw;
@@ -84,30 +97,53 @@
     line-height: 25px;
 }
 
-.txt-container{
-    margin-top: 15  0px;
+.txt-container {
+    margin-top: 15 0px;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.presentation-container{
+.presentation-container {
     width: 100%;
     
 }
-@media  (max-width: 1000px) {
-    .txt-container{
+
+@media (max-width: 1000px) {
+    .txt-container {
         width: 100%;
     }
-    .txt{
-        text-align:justify;
+
+    .txt {
+        text-align: justify;
         margin-left: 0px;
         line-height: 20px;
     }
 
-    .PresentationTile{
+    .PresentationTile {
         text-align: center;
-    
+
+    }
+
+    .name{
+        justify-self: center;
+        margin-top: 50px;
+        text-align: center;
+        margin: auto;
+    }   
+    .logo {
+        opacity: 0;
+    }
+    .pragraph-container{
+        width: 70vw;
+        margin: auto;
+        justify-self: center;
+        margin-top: 40px;
+    }
+
+    .pragraph-container:nth-child(4) {
+        margin-left: auto;
+        width: 70vw;
     }
 }
 
@@ -117,9 +153,10 @@
         color: transparent;
         transform: translateY(-5%);
     }
+
     100% {
         color: #fff;
         transform: translateY(0%);
     }
-    
+
 }

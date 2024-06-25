@@ -6,14 +6,10 @@ export default function EmailPart() {
 
     return (
 
-        <div className="project-part-contener">
-            <div>
-                <h1 className="title-part">N'hésitez pas à me contacter pour divers projets</h1>
-                <PartContener title={"Contact"}>
-                    <EmailForm />
-                </PartContener>
-            </div>
 
-        </div>
+        <PartContener title={"Contact"}>
+            <h1 className="title-part">N'hésitez pas à me contacter pour divers projets</h1>
+            <EmailForm />
+        </PartContener>
     )
 }

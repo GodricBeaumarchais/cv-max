@@ -32,16 +32,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     color: #eee;
     min-height: 100vh;
+    margin: auto;
+    width: 99vw;
   }
   
   .all-page{
+    
     position: relative;
     background-color: var(--blue-dark);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     overflow: hidden;
   }
 
@@ -139,9 +143,4 @@
     cursor: pointer;
   }
 
-  @media  (max-width: 1000px) {
-  
-    .Body-body{
-      padding: 3vw 12vw 3vw 8vw;
-    }
-}
+

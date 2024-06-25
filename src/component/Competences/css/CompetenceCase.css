@@ -1,10 +1,10 @@
 .icon {
-    font-size: 60px;
+    font-size: 50px;
 }
 
 .icon-contener {
     position: relative;
-    display: inline-block;
+    display: flex;
     padding: 25px;
     color: var(--blue-light);
     border-radius: 15px; /* Appliquer le border-radius */
