@@ -1,5 +1,13 @@
 import "./Presentation.css"
-import logo from "../../image/logo.svg"
+import logo from "../../image/logo_default.svg"
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaMailBulk } from "react-icons/fa";
+import { FaDiscord } from "react-icons/fa";
+import copy from 'copy-to-clipboard';
+import CV_icon from "../../image/CV_icon.svg"
+
+
 export default function Presentation() {
 
     function calculAge(dateDeNaissance) {
@@ -12,9 +20,26 @@ export default function Presentation() {
 
     const age = calculAge(dateDeNaissance)
 
+
+    const handleDiscordClick = () => {
+        copy("maximetancrede"); // Remplacez par votre pseudo Discord réel
+        alert("Pseudo Discord copié !");
+    };
+
+    const handleMailClick = () => {
+        copy("maxime.tancrede.pro@gmail.com"); // Remplacez par votre adresse email réelle
+        alert("Email copié !");
+    };
+
     return (
 
         <div className="presentation-container">
+            <svg width="1em" height="1em">
+                <linearGradient id="blue-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
+                    <stop stopColor="#01ECF3" offset="0%" />
+                    <stop stopColor="#DA107B" offset="100%" />
+                </linearGradient>
+            </svg>
 
             <div className="top-pres">
                 <div className="top-pres-left">
@@ -25,7 +50,14 @@ export default function Presentation() {
                     </div>
                 </div>
                 <div className="logo-container">
-                    <img className="logo" src={logo} alt="Maxime_Tancrede"></img>
+                    <div className="link-container">
+                        <FaDiscord className="icon" style={{ fill: "url(#blue-gradient)" }} onClick={handleDiscordClick}  />
+                        <FaLinkedin className="icon" style={{ fill: "url(#blue-gradient)", alignSelf: "flex-start" }} onClick={() => window.open("https://www.linkedin.com/", "_blank")} />
+                        <img className="icon" src={CV_icon} style={{ fill: "url(#blue-gradient)", alignSelf: "flex-start" }} alt="CV" onClick={() => window.open("/CV_Maxime_Tancrede.pdf", "_blank")} />
+                        <FaGithub className="icon" style={{ fill: "url(#blue-gradient)", alignSelf: "flex-start" }}  onClick={() => window.open("https://github.com/", "_blank")}/>
+                        <FaMailBulk className="icon" style={{ fill: "url(#blue-gradient)" }} onClick={handleMailClick} />
+                    </div>
+                    <img className="logo" src={logo} alt="Maxime_Tancrede" />
                 </div>
             </div>
 

@@ -1,53 +1,70 @@
 [
     {
-        "id" : 1,
-        "title" : "Scantrad App Mobile",
-        "description" : "Une application react native pour lire des scan format manga/manwha",
+        "id": 1,
+        "title": "Scantrad App Mobile",
+        "description": "Une application react native pour lire des scan format manga/manwha",
         "presentation": "Scantrad"
     },
     {
-        "id" : 2,
-        "title" : "C Project Os",
-        "description" : "Un OS en ligne de commande codé en C avec gestion de la mémoire, écriture/lecture/édition et système d'utilisateur.",
-        "git" : "https://gitlab.com/GodricBeaumarchais/projet_os_coffef"
+        "id": 2,
+        "title": "C Project Os",
+        "description": "Un OS en ligne de commande codé en C avec gestion de la mémoire, écriture/lecture/édition et système d'utilisateur.",
+        "git": "https://gitlab.com/GodricBeaumarchais/projet_os_coffef"
     },
     {
-        "id" : 3,
+        "id": 3,
+        "title": "Web Service Exemple",
+        "description": "Exemple de web service pour la gestion de projet en typescript ( API, WebSocket, Webhook, GRCP, SSE )",
+        "git": "https://github.com/GodricBeaumarchais/serviceWebProject"
+    },
+    {
+        "id": 4,
         "title": "IA de recherche A*",
         "description": "Une modélisation d'un jeu et d'une IA pour trouver la meilleure manière de le résoudre en C++.",
-        "git" : "https://gitlab.com/GodricBeaumarchais/ia-tree-search"
+        "git": "https://gitlab.com/GodricBeaumarchais/ia-tree-search"
     },
     {
-        "id" : 4,
+        "id": 5,
         "title": "Quiz Secu",
         "description": "Un site de quiz sur les descriptions de mon cours de sécurité pour préparer les examens",
         "site": "http://quiz-secu.maximetechlab.fr/",
-        "git" : "https://gitlab.com/GodricBeaumarchais/quiz-secu"
+        "git": "https://gitlab.com/GodricBeaumarchais/quiz-secu"
     },
-    
     {
-        "id": 5,
+        "id": 6,
         "title": "JDR Java",
         "description": "Une modélisation d'un jeu de rôle en Java.",
         "git": "https://gitlab.com/GodricBeaumarchais/java-jdr"
     },
     {
-        "id": 6,
+        "id": 7,
         "title": "Site de personnalisation de manette [EN COURS...]",
         "description": "Un site permettant de personnaliser une manette de jeu en ligne et de passer commande.",
         "site": "http://manette-custom.maximetechlab.fr",
         "git": "https://gitlab.com/GodricBeaumarchais/custom_web"
     },
     {
-        "id": 7,
+        "id": 8,
         "title": "Système de vote",
         "description": "Une modélisation d'un scrutin par de multiples méthodes (principalement celle de Condorcet) avec une lecture de fichier CSV en entrée et un cryptage SHA 256 pour anonymiser le scrutin en C.",
         "git": "https://gitlab.com/GodricBeaumarchais/projet_l2s1"
     },
     {
-        "id": 8,
+        "id": 9,
         "title": "Site pour mon CV",
         "description": "Le site sur lequel vous vous trouvez actuellement, fait entièrement par moi en React JS.",
         "git": "https://gitlab.com/GodricBeaumarchais/cv_maxime"
+    },
+    {
+        "id": 10,
+        "title": "Robot suiveur de ligne",
+        "description": "Un code arduino qui permet à un robot de suivre une ligne et de passer plusieurs obstacle complexe tels que des pointillet, croisement ou virage a 35°.",
+        "git": "https://github.com/GodricBeaumarchais/BE-Fast-Anxious"
+    },
+    {
+        "id": 11,
+        "title": "Manager de Bdd",
+        "description": "Script permettant de partager des données entre plusieurs BDD de manière sécurisée automatique et API permettant de géré les base de données avec qui les partager.",
+        "git": "https://github.com/GodricBeaumarchais/statBddManagerClicnWork"
     }
 ]
