@@ -160,7 +160,7 @@ export default function Home() {
                 <FloatingIcons />
                 {/* URL dans .env.development / .env.production ; bouton masqué tant qu'elle n'est pas définie */}
                 {process.env.NEXT_PUBLIC_SERVICES_URL && (
-                    <a className="services-link" href={process.env.NEXT_PUBLIC_SERVICES_URL}>BrithLab Services →</a>
+                    <a className="services-link" href={process.env.NEXT_PUBLIC_SERVICES_URL}>BrightLab Services →</a>
                 )}
                 <div type="checkbox" ref={refPresentation} />
                 <Presentation />

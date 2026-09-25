@@ -53,7 +53,7 @@
     width: 99vw;
   }
 
-  /* Lien vers le site BrithLab Services : pilule à anneau en dégradé (mask, pas de z-index négatif) */
+  /* Lien vers le site BrightLab Services : pilule à anneau en dégradé (mask, pas de z-index négatif) */
   .services-link {
     position: absolute;
     top: 20px;
