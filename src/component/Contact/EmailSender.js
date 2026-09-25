@@ -1,30 +1,47 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { FaCheck } from 'react-icons/fa';
 import "./css/EmailSend.css"
 
 function EmailSender(props) {
-  // Initialise un état local `emailSent` qui indique si l'email a été envoyé avec succès
   const [emailSent, setEmailSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(null);
 
-  // Fonction qui envoie l'email en utilisant la bibliothèque EmailJS
-  function sendEmail() {
-    // Envoie l'email avec les paramètres fournis
-    emailjs.send( "service_vp9kva4", "template_05zy9yu", props.formData, "5lKPKuq7M-RF4mAqX")
+  function sendEmail(event) {
+    // Le bouton est un <button type="submit"> sans onSubmit natif branché sur l'envoi :
+    // reportValidity() déclenche manuellement la validation HTML5 (required, type="email", minLength)
+    // et l'invite native du navigateur avant de contacter EmailJS.
+    if (!event.target.form.reportValidity()) {
+      return;
+    }
+    setError(null);
+    setSending(true);
+    emailjs.send("service_vp9kva4", "template_05zy9yu", props.formData, "5lKPKuq7M-RF4mAqX")
       .then(() => {
-        // Met à jour l'état local `emailSent` si l'email a été envoyé avec succès
+        setSending(false);
         setEmailSent(true);
       }, () => {
-        // Affiche une erreur si l'email n'a pas pu être envoyé
-        alert('An error occurred while sending the email.');
+        setSending(false);
+        setError("Une erreur est survenue lors de l'envoi de l'email. Réessayez ou écrivez-moi directement.");
       });
   }
 
-  // Rend un bouton "Send Email" qui appelle la fonction `sendEmail` lorsque l'utilisateur clique dessus
+  if (emailSent) {
+    return (
+      <div className="send-success">
+        <span className="send-success-badge"><FaCheck /></span>
+        <p className='text-send'>Email envoyé avec succès !</p>
+      </div>
+    );
+  }
+
   return (
     <div>
-      
-      {emailSent ? <p className='text-send'>Email sent successfully!</p>:
-        <button onClick={sendEmail} className="button-sender">Envoyer le mail</button>}
+      <button type="submit" onClick={sendEmail} className="button-sender" disabled={sending}>
+        {sending ? "Envoi..." : "Envoyer le mail"}
+      </button>
+      {error && <p className='text-error'>{error}</p>}
     </div>
   );
 }

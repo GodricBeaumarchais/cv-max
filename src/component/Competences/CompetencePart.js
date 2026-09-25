@@ -1,7 +1,7 @@
 import PartContener from "../PartContener"
 import CompetenceList from "./CompetenceList"
-import logo_side from "../../image/logo_default.svg"
-import logo_opensource from "../../image/logo_opensource.svg"
+const logo_side = "/image/logo_default.svg"
+const logo_opensource = "/image/logo_opensource.svg"
 import "./css/CompetencePart.css"
 
 

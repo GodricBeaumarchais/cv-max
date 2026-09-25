@@ -42,22 +42,34 @@
 }
 
 .flip-card-front {
-  background-image:    linear-gradient( 304deg,  #005C5D, #570631);  ;
-  color: black;
+  /* Style css.glass : voile blanc + dégradé magenta->cyan du site, tous translucides,
+     sur une base sombre elle aussi translucide (0.35) : une base opaque masquerait
+     entièrement le résultat du backdrop-filter, qui se peint dessous, pas dedans */
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+              linear-gradient(304deg, rgba(218, 16, 123, 0.35), rgba(1, 236, 243, 0.25)),
+              linear-gradient(rgba(0, 20, 18, 0.35), rgba(0, 20, 18, 0.35));
+  will-change: backdrop-filter;
+    backdrop-filter: blur(14px) saturate(180%);
+  color: #eee;
   border-radius: 15px;
   display : flex;
-  border: #293C38 solid 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
 }
 
 .flip-card-back {
-  background: linear-gradient( 304deg,  var(--purple-med-dark), var(--blue-dark));  /*var(--purple-med-dark);*/
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+              linear-gradient(304deg, rgba(1, 236, 243, 0.3), rgba(218, 16, 123, 0.3)),
+              linear-gradient(rgba(0, 20, 18, 0.35), rgba(0, 20, 18, 0.35));
+  will-change: backdrop-filter;
+    backdrop-filter: blur(14px) saturate(180%);
   color: white;
   transform: rotateY(180deg);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  border: var(--blue-med-dark) solid 10px;
-
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
 }
 
 .talent-case-header{

@@ -1,11 +1,12 @@
 import "./Presentation.css"
-import logo from "../../image/logo_default.svg"
-import { FaLinkedin } from "react-icons/fa";
+const logo = "/image/logo_default.svg"
 import { FaGithub } from "react-icons/fa";
 import { FaMailBulk } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa";
 import copy from 'copy-to-clipboard';
-import CV_icon from "../../image/CV_icon.svg"
+import { useState, useRef } from "react";
+import ShaderBackground from "../ShaderBackground";
+const CV_icon = "/image/CV_icon.svg"
 
 
 export default function Presentation() {
@@ -20,20 +21,31 @@ export default function Presentation() {
 
     const age = calculAge(dateDeNaissance)
 
+    // Toast in-page à la place d'alert() : un alert() natif bloque le fil et casse
+    // le langage d'interaction du reste du site (anneau en dégradé, jamais de popup système)
+    const [toast, setToast] = useState(null);
+    const toastTimeout = useRef(null);
+
+    const showToast = (message) => {
+        clearTimeout(toastTimeout.current);
+        setToast(message);
+        toastTimeout.current = setTimeout(() => setToast(null), 1800);
+    };
 
     const handleDiscordClick = () => {
         copy("maximetancrede"); // Remplacez par votre pseudo Discord réel
-        alert("Pseudo Discord copié !");
+        showToast("Pseudo Discord copié !");
     };
 
     const handleMailClick = () => {
         copy("maxime.tancrede.pro@gmail.com"); // Remplacez par votre adresse email réelle
-        alert("Email copié !");
+        showToast("Email copié !");
     };
 
     return (
 
         <div className="presentation-container">
+            <ShaderBackground />
             <svg width="1em" height="1em">
                 <linearGradient id="blue-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
                     <stop stopColor="#01ECF3" offset="0%" />
@@ -43,21 +55,21 @@ export default function Presentation() {
 
             <div className="top-pres">
                 <div className="top-pres-left">
-                    <h1 className="name">Maxime<br></br> Tancrède</h1>+
+                    <h1 className="name">Maxime<br></br> Tancrède</h1>
                     <div className="pragraph-container">
                         <h2 className="PresentationTitle">Présentation et parcours scolaire</h2>
-                        <p className="txt">Je m'appelle Maxime Tancrède, j'ai {age} ans, je suis actuellement étudiant en master informatique chez Ynov Montpellier. J'ai obtenu mon bac S spécialisé en mathématiques et ma licence d'informatique à l'université Paul Sabatier.</p>
+                        <p className="txt">Je m'appelle Maxime Tancrède, j'ai {age} ans, je suis actuellement ingénieur en développement web et logiciel ainsi qu'en gestion système chez Racine ENR en CDI. J'ai obtenu mon master informatique à Ynov Montpellier en 2025, après mon bac S spécialisé en mathématiques et ma licence d'informatique à l'université Paul Sabatier.</p>
                     </div>
                 </div>
                 <div className="logo-container">
                     <div className="link-container">
-                        <FaDiscord className="icon" style={{ fill: "url(#blue-gradient)" }} onClick={handleDiscordClick}  />
-                        <FaLinkedin className="icon" style={{ fill: "url(#blue-gradient)", alignSelf: "flex-start" }} onClick={() => window.open("https://www.linkedin.com/", "_blank")} />
-                        <img className="icon" src={CV_icon} style={{ fill: "url(#blue-gradient)", alignSelf: "flex-start" }} alt="CV" onClick={() => window.open("/CV_Maxime_Tancrede.pdf", "_blank")} />
-                        <FaGithub className="icon" style={{ fill: "url(#blue-gradient)", alignSelf: "flex-start" }}  onClick={() => window.open("https://github.com/", "_blank")}/>
-                        <FaMailBulk className="icon" style={{ fill: "url(#blue-gradient)" }} onClick={handleMailClick} />
+                        <FaDiscord className="icon" style={{ fill: "url(#blue-gradient)" }} onClick={handleDiscordClick} role="button" aria-label="Copier le pseudo Discord" />
+                        <img className="icon" src={CV_icon} style={{ fill: "url(#blue-gradient)", alignSelf: "flex-start" }} alt="Télécharger le CV" onClick={() => window.open("/CV_Maxime_Tancrede.pdf", "_blank")} />
+                        <FaGithub className="icon" style={{ fill: "url(#blue-gradient)", alignSelf: "flex-start" }}  onClick={() => window.open("https://github.com/GodricBeaumarchais", "_blank")} role="button" aria-label="Voir le profil GitHub"/>
+                        <FaMailBulk className="icon" style={{ fill: "url(#blue-gradient)" }} onClick={handleMailClick} role="button" aria-label="Copier l'adresse email" />
                     </div>
                     <img className="logo" src={logo} alt="Maxime_Tancrede" />
+                    {toast && <div className="copy-toast" role="status">{toast}</div>}
                 </div>
             </div>
 

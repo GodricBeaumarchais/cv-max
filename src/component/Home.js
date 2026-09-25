@@ -1,12 +1,15 @@
 import "./css/Home.css";
 // import TabBar from "./header/TabBar";
 // import IconHeader from "./header/IconHeader";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import ProjectPart from "./project/ProjectPart";
 import CompetencePart from "./Competences/CompetencePart";
 import Presentation from "./Presentation/Presentation";
 import EmailPart from "./Contact/EmailPart";
 import TalentContainer from "./Talent/TalentContainer";
+import FloatingIcons from "./FloatingIcons";
+import Reveal from "./Reveal";
+import ParticleField from "./ParticleField";
 
 // function useScrollDirection() {
 //     const [scrollDirection, setScrollDirection] = useState(null);
@@ -71,6 +74,21 @@ export default function Home() {
     const refCompetence = useRef(null);
     const refContact = useRef(null);
 
+    // Pose --scroll-y sur <html> pour le fond en dégradé parallax (voir .scroll-gradient-bg)
+    useEffect(() => {
+        let ticking = false;
+        const onScroll = () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+                document.documentElement.style.setProperty("--scroll-y", window.scrollY);
+                ticking = false;
+            });
+        };
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
     // const goToScroll = (ref) => {
     //     switch (ref) {
     //         case "section-1":
@@ -89,10 +107,6 @@ export default function Home() {
     //             break;
     //     }
     // };
-
-    const downloadButton = () => {
-        window.open("http://cv.maximetechlab.fr/CV_Maxime_Tancrede.pdf", "_blank");
-    };
 
     // const headerClassNames = () => {
     //     if (scrollDirection === "down") {
@@ -121,6 +135,7 @@ export default function Home() {
     // const list = require("../list/header.json");
     return (
         <div className="all-page">
+            <div className="scroll-gradient-bg" aria-hidden="true" />
             {/* <div className={bodyHeaderClassNames()}>
                 <div className={headerClassNames()}>
                     <div className="header-box">
@@ -140,18 +155,28 @@ export default function Home() {
                     </div>
                 </div>
             </div> */}
-            <body className="Body-body">
+            <div className="Body-body">
+                <ParticleField />
+                <FloatingIcons />
+                {/* URL dans .env.development / .env.production ; bouton masqué tant qu'elle n'est pas définie */}
+                {process.env.NEXT_PUBLIC_SERVICES_URL && (
+                    <a className="services-link" href={process.env.NEXT_PUBLIC_SERVICES_URL}>BrithLab Services →</a>
+                )}
                 <div type="checkbox" ref={refPresentation} />
                 <Presentation />
+                <div className="section-divider" aria-hidden="true" />
                 <div type="checkbox" ref={refCompetence} />
-                <CompetencePart />
+                <Reveal><CompetencePart /></Reveal>
+                <div className="section-divider" aria-hidden="true" />
                 <div type="checkbox" ref={refProject} />
-                <ProjectPart />
-                <TalentContainer color={"green"} />
+                <Reveal><ProjectPart /></Reveal>
+                <div className="section-divider" aria-hidden="true" />
+                <Reveal><TalentContainer color={"green"} /></Reveal>
+                <div className="section-divider" aria-hidden="true" />
                 <div type="checkbox" ref={refContact} />
-                <EmailPart />
-                
-            </body>
+                <Reveal><EmailPart /></Reveal>
+
+            </div>
         </div>
     );
 }

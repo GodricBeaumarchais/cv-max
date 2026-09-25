@@ -1,0 +1,24 @@
+.reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    filter: blur(8px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
+}
+
+.reveal-visible {
+    opacity: 1;
+    /* none, pas translateY(0)/blur(0) : une valeur non-"none" (même à zéro) crée quand même
+       un contexte d'empilement + bloc de confinement pour les descendants position:fixed,
+       ce qui piégeait le glow des cartes en verre (backdrop-filter) sous ces sections. */
+    transform: none;
+    filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        transition: none;
+    }
+}

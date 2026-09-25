@@ -32,11 +32,12 @@ export default function TalentContainer(props) {
 
     return (
         <div className="talent-container" style={{ borderColor: color }}>
+            <div className="part-bloom" aria-hidden="true" />
 
             <div className="talent-container-header">
                 <h1 className="talent-container-title">Qualités</h1>
             </div>
-            
+
 
                 <div className="talent-container-body" style={{ borderColor: color }}>
                     {list.map((item, index) => (

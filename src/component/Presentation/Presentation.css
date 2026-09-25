@@ -1,7 +1,7 @@
 .name {
     color: #fff;
     font-family: "AllertaStencil";
-    font-size: 128px;
+    font-size: clamp(40px, 9vw, 128px);
     text-align: left;
     font-weight: 400;
     margin-left: 200px;
@@ -39,18 +39,18 @@
     content: '';
     /* Nécessaire pour les pseudo-éléments ::before et ::after */
     position: absolute;
-    top: -85px;
+    /* Halo = dégradé + masque radial, PAS filter:blur(130px) : Firefox tronquait la zone
+       de flou aux bords de la div pendant le scroll. Sans filtre, rien à tronquer. La boîte
+       est agrandie de 2×200px pour couvrir la zone que le flou débordait. */
+    top: -285px;
     left: 50%;
     transform: translateX(-50%) rotate(-180deg);
-    /* Centre horizontalement et applique la rotation */
-    width: 60vw;
-    height: 170%;
+    width: calc(60vw + 400px);
+    height: calc(170% + 400px);
     opacity: 0.6;
     background: linear-gradient(160deg, var(--main-purple) 0%, var(--main-blue) 100%);
-    /* Exemple de dégradé, ajuster les couleurs réelles */
-    filter: blur(130px);
-    /* Ajustez le niveau de flou selon les spécifications réelles */
-    border-radius: 50%;
+    mask-image: radial-gradient(closest-side, #000 20%, rgba(0, 0, 0, 0.45) 60%, transparent 100%);
+    pointer-events: none;
     z-index: -1;
     /* Place le pseudo-élément derrière le conteneur */
 
@@ -73,7 +73,55 @@
     font-size: 70px;
     width: 90%;
     height: 110px;
-    
+
+}
+
+.copy-toast {
+    position: absolute;
+    top: 125px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 40;
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 16px;
+    color: #eee;
+    background-color: var(--blue-dark);
+    animation: toast-in 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+}
+
+.copy-toast::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: var(--gradient);
+    z-index: -2;
+}
+
+.copy-toast::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--blue-dark);
+    padding: 1px;
+    box-sizing: border-box;
+    z-index: -1;
+}
+
+@keyframes toast-in {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
 }
 
 
@@ -87,9 +135,11 @@
     transform: translateY(-20%);
 }
 
-.icon:hover {
-    transform: translateY(-5px);
-    opacity: 0.8;
+@media (hover: hover) and (pointer: fine) {
+    .icon:hover {
+        transform: translateY(-5px);
+        opacity: 0.8;
+    }
 }
 
 .logo {
@@ -114,7 +164,7 @@
 }
 
 .pragraph-container:nth-child(3)::before {
-    width: 70vw;
+    width: calc(70vw + 400px);
     background: linear-gradient(350deg, var(--main-purple) 0%, var(--main-blue) 100%);
     /* Exemple de dégradé, ajuster les couleurs réelles */
 
@@ -144,9 +194,17 @@
     width: 100%;
 }
 
+/* Quand le shader WebGL prend, les blooms CSS statiques passent en simple appoint plutôt
+   que de s'additionner à pleine intensité. :has() dégrade proprement (pas de support ->
+   les blooms restent à pleine opacité, la scène reste juste un peu plus chargée en lumière). */
+.presentation-container:has(.shader-background[data-ready="true"]) .pragraph-container::before {
+    opacity: 0.2;
+}
+
 .presentation-container {
+    position: relative;
     width: 100%;
-    
+
 }
 
 @media (max-width: 1000px) {
@@ -181,7 +239,8 @@
         margin-top: 50px;
         text-align: center;
         margin: auto;
-    }   
+        font-size: clamp(40px, 13vw, 128px);
+    }
     .logo {
         display: none;
         opacity: 0;

@@ -1,4 +1,5 @@
 .talent-container {
+  position: relative;
   align-self: center;
   margin: auto;
   display: flex;

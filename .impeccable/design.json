@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-25T00:00:00.000Z",
+  "title": "Design System: Maxime Tancrède — CV",
+  "extensions": {
+    "colorMeta": {
+      "magenta-pulse": { "role": "primary", "displayName": "Magenta Pulse", "canonical": "#DA107B", "tonalRamp": ["#470528", "#7C0946", "#B00D63", "#E41181", "#F13C9C", "#F570B6", "#F8A5D1", "#FCD9EC"] },
+      "magenta-deep": { "role": "primary", "displayName": "Magenta Deep", "canonical": "#AE0D62" },
+      "magenta-shadow": { "role": "primary", "displayName": "Magenta Shadow", "canonical": "#570631" },
+      "electric-cyan": { "role": "secondary", "displayName": "Electric Cyan", "canonical": "#01ECF3", "tonalRamp": ["#004A4C", "#018084", "#01B7BC", "#01EDF4", "#2FF8FE", "#67FAFE", "#9EFCFF", "#D6FEFF"] },
+      "cyan-muted": { "role": "secondary", "displayName": "Cyan Muted", "canonical": "#00BCC1" },
+      "teal-shadow": { "role": "secondary", "displayName": "Teal Shadow", "canonical": "#005C5D" },
+      "void-teal": { "role": "neutral", "displayName": "Void Teal", "canonical": "#001412", "tonalRamp": ["#004C45", "#008577", "#00BDAA", "#00F5DC", "#2EFFEA", "#66FFF0", "#9EFFF5", "#D6FFFB"] },
+      "text-primary": { "role": "neutral", "displayName": "Fog", "canonical": "#EEEEEE" },
+      "text-muted": { "role": "neutral", "displayName": "Ash", "canonical": "#DDDDDD" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display / AllertaStencil", "purpose": "Section titles and the name hero only." },
+      "body": { "displayName": "Body / Inconsolata", "purpose": "All running copy, buttons, links, form fields." }
+    },
+    "shadows": [
+      { "name": "flip-card", "value": "0 4px 8px 0 rgba(0,0,0,0.2)", "purpose": "The one accepted box-shadow exception, used only on the Qualités flip-card." }
+    ],
+    "motion": [
+      { "name": "gradient-ring-hover", "value": "1s ease-in", "purpose": "Button/ring color inversion on hover." },
+      { "name": "flip-card-turn", "value": "0.6s ease (transform)", "purpose": "3D card flip reveal, staggered 250ms per card." },
+      { "name": "text-appear", "value": "1s ease-in (color fade-in)", "purpose": "Card title/description reveal on scroll into view." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "800px" },
+      { "name": "md", "value": "900px" },
+      { "name": "lg", "value": "1000px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Gradient Ring Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The site's signature pill button: a gradient ring around a dark fill, inverting on hover.",
+      "html": "<button class=\"ds-btn-primary\">Envoyer le mail</button>",
+      "css": ".ds-btn-primary { position: relative; display: inline-block; z-index: 30; border-radius: 50px; padding: 1vw; font-size: 36px; color: #DDDDDD; border: none; background: transparent; transition: color 1s ease-in; } .ds-btn-primary::before { content: ''; position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; border-radius: inherit; background: linear-gradient(150deg, #DA107B, #01ECF3); z-index: -2; transition: background 1s ease-in; } .ds-btn-primary::after { content: ''; position: absolute; width: 100%; height: 100%; top: 0; left: 0; border-radius: inherit; background: #001412; padding: 2px; box-sizing: border-box; z-index: -1; transition: background 1s ease-in; } .ds-btn-primary:hover { color: #222222; cursor: pointer; } .ds-btn-primary:hover::before { background: #222222; } .ds-btn-primary:hover::after { background: linear-gradient(150deg, #DA107B, #01ECF3); }"
+    },
+    {
+      "name": "Gradient Ring Card",
+      "kind": "card",
+      "refersTo": "card-primary",
+      "description": "Project card: gradient-ring border around a dark fill, title + scrollable description + pill link.",
+      "html": "<div class=\"ds-card\"><span class=\"ds-card-title\">Project Title</span><span class=\"ds-card-desc\">Short project description goes here, scrolls if it overflows the fixed card height.</span><a class=\"ds-card-link\" href=\"#\">Presentation</a></div>",
+      "css": ".ds-card { position: relative; display: flex; flex-direction: column; width: 350px; height: 225px; padding: 20px; margin: 25px; border-radius: 15px; z-index: 30; } .ds-card::before { content: ''; position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; border-radius: inherit; background: linear-gradient(150deg, #DA107B, #01ECF3); z-index: -2; } .ds-card::after { content: ''; position: absolute; width: 100%; height: 100%; top: 0; left: 0; border-radius: inherit; background: #001412; padding: 2px; box-sizing: border-box; z-index: -1; } .ds-card-title { display: block; color: #EEEEEE; font-size: clamp(19px, 2vw, 25px); margin-bottom: 1vw; } .ds-card-desc { display: block; flex: 1; overflow-y: auto; color: #EEEEEE; font-weight: 300; font-size: 18px; text-align: left; padding-right: 20px; scrollbar-color: #DA107B transparent; scrollbar-width: thin; } .ds-card-link { align-self: flex-start; margin-top: auto; color: #fff; font-size: 22px; text-transform: uppercase; text-decoration: none; border: #eee solid 1px; border-radius: 50px; padding: 7px 15px; background: linear-gradient(150deg, #DA107B, #01ECF3); transition: all 0.5s; } .ds-card-link:hover { color: #000; background: linear-gradient(150deg, #01ECF3, #DA107B, #01ECF3); }"
+    },
+    {
+      "name": "Gradient Ring Input",
+      "kind": "input",
+      "refersTo": "card-primary",
+      "description": "Pill text input wrapped in the gradient-ring container, transparent fill, no literal border.",
+      "html": "<div class=\"ds-input-wrap\"><input class=\"ds-input\" type=\"text\" placeholder=\"Nom\" /></div>",
+      "css": ".ds-input-wrap { position: relative; display: inline-block; margin: 20px; border-radius: 50px; background-color: #001412; z-index: 30; } .ds-input-wrap::before { content: ''; position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; border-radius: inherit; background: linear-gradient(150deg, #DA107B, #01ECF3); z-index: -2; } .ds-input-wrap::after { content: ''; position: absolute; width: 100%; height: 100%; top: 0; left: 0; border-radius: inherit; background: #001412; padding: 2px; box-sizing: border-box; z-index: -1; } .ds-input { border: none; background-color: transparent; position: relative; display: inline-block; font-size: 24px; color: #DDDDDD; width: 17vw; padding: 10px; font-family: 'Inconsolata', monospace; } .ds-input:focus { outline: none; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Ring of Light",
+    "overview": "A single-page dark portfolio built around one recurring device: a magenta-to-cyan gradient that never fills a surface, only traces its edge. Every interactive container — buttons, cards, inputs — sits on the same near-black teal fill (#001412) and gets its identity from a thin glowing ring rather than a flat color block or a drop shadow. Behind the hero and section headers, the same two hues reappear as huge, heavily blurred blooms, standing in for shadows and giving the page its ambient, backlit feel.\n\nThe system is not a formal, exhaustively-tokenized design system — it's a hand-built personal site with one strong, consistently-applied idea. Titles are set in a custom stencil display face (AllertaStencil); everything else runs in a monospace body face (Inconsolata), giving the whole thing a \"technical/dev\" voice appropriate for a software engineer's CV.",
+    "keyCharacteristics": [
+      "One background: near-black teal (#001412), everywhere, no light surfaces.",
+      "One accent system: the magenta↔cyan gradient, used as a border/bloom, never a fill.",
+      "Depth from light (blur blooms), not shadow.",
+      "Every corner is either a full pill (buttons, inputs) or a soft 15px rectangle (cards) — nothing sharp."
+    ],
+    "rules": [
+      { "name": "The Two-Hue Law", "body": "All structural color comes from the magenta↔cyan gradient and its tonal siblings. Red/green/deeppink/blueviolet are reserved for isolated functional signals and never appear in navigation, cards, or buttons.", "section": "colors" },
+      { "name": "The Stencil-For-Structure Rule", "body": "AllertaStencil is reserved for section/identity titles only (name, section headers, card titles). Body copy, buttons, and form fields stay in Inconsolata.", "section": "typography" },
+      { "name": "The Bloom-Not-Shadow Rule", "body": "Depth cues are large blurred gradient blooms behind content, never box-shadow on the content itself.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do build any new bordered container with the Gradient Ring technique (::before gradient inset -2px at z-index -2, ::after Void Teal fill at z-index -1) instead of a literal border.",
+      "Do keep every surface on Void Teal (#001412); this system has no light/white surface.",
+      "Do use blurred, low-opacity gradient blooms for depth behind hero or section content, sized generously (blur(70-130px), opacity 0.6).",
+      "Do set section/identity titles in AllertaStencil and leave body copy in Inconsolata.",
+      "Do size type and spacing with clamp()/vw so new sections scale fluidly rather than snapping at fixed breakpoints."
+    ],
+    "donts": [
+      "Don't introduce box-shadow as a default depth cue — the flip-card is the one accepted exception, not a pattern to extend.",
+      "Don't use square or sharp corners; every surface is pill (50px) or soft-rect (15px/10px).",
+      "Don't bring a third structural hue into buttons, cards, or nav — red/green/deeppink/blueviolet stay confined to their one existing functional signal each."
+    ]
+  }
+}

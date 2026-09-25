@@ -1,5 +1,5 @@
 import "./css/ProjectCase.css"
-import { Link } from "react-router-dom"
+import Link from "next/link"
 import { InView } from "react-intersection-observer"
 import { useState } from "react"
 
@@ -35,12 +35,12 @@ export default function ProjectCase({ title, def, Presentation, Git, Site }) {
                     <span className="title">
                         {title}
                     </span>
-                    <span className="description" t>
+                    <span className="description">
                         {def}
                     </span>
                     <div className="link-contener">
                         {presentation_b ?
-                            <Link to={Presentation} className="link" >Presentation</Link> :
+                            <Link href={`/${Presentation}`} className="link" >Presentation</Link> :
                             null}
                         {git_b ?
                             <a href={Git} className="link" rel="noreferrer" target="_blank">View Git</a> :

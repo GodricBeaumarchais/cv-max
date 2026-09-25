@@ -1,17 +1,17 @@
 import "./Scantrad.css";
 import {RiArrowLeftLine} from "react-icons/ri"
-import {Link} from "react-router-dom"
+import Link from "next/link"
 
 export default function Scantrad(){
 
-    
 
 
-    const chapterList = require("./Scantrad_src/ChapterList.PNG");
-    const reader = require("./Scantrad_src/Reader.PNG");
+
+    const chapterList = "/portfolio/ChapterList.PNG";
+    const reader = "/portfolio/Reader.PNG";
     return(
         <div className="Presentation-Body">
-            <Link to={"../"} className="link-portflio" >
+            <Link href="/" className="link-portflio" >
                 <span className="txt-contener">
                     <span className="text-contener-two">
                         <RiArrowLeftLine/>

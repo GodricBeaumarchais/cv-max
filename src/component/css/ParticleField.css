@@ -1,0 +1,11 @@
+.particle-field {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    /* Pas de z-index : enfant direct de .Body-body, avant tout le reste dans le DOM (comme
+       FloatingIcons), il se peint donc naturellement derrière le contenu suivant. Un z-index
+       explicite (même positif) se faisait recouvrir par endroits plus loin dans la page,
+       vraisemblablement à cause des calques de composition créés par les surfaces vitrées
+       (backdrop-filter) des sections en dessous — l'ordre du DOM est un signal plus fiable
+       ici que d'essayer de deviner une valeur de z-index qui gagne partout. */
+}

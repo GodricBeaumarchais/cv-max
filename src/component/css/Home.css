@@ -26,9 +26,23 @@
     
   }
   
+  .section-divider {
+    width: 60%;
+    max-width: 700px;
+    height: 1px;
+    margin: 40px auto;
+    background: linear-gradient(90deg, transparent, var(--main-purple), var(--main-blue), transparent);
+    opacity: 0.4;
+  }
+
   .Body-body {
+    position: relative;
     font-family: 'Inconsolata', monospace;
     background-color: var(--blue-dark);
+    /* Grille de points discrète : sert de texture au fond, sinon le backdrop-filter
+       des surfaces vitrées n'a rien de net à flouter (un dégradé lisse flouté reste lisse) */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1.5px);
+    background-size: 26px 26px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,9 +52,73 @@
     margin: auto;
     width: 99vw;
   }
-  
+
+  /* Lien vers le site BrithLab Services : pilule à anneau en dégradé (mask, pas de z-index négatif) */
+  .services-link {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    z-index: 5;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 16px;
+    color: #eee;
+    text-decoration: none;
+    background: rgba(0, 20, 18, 0.5);
+    transition: color 0.3s, background 0.3s;
+  }
+
+  .services-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: var(--gradient);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .services-link:hover { color: #000; background: var(--gradient); }
+  }
+
+  /* Dégradé de fond fixe qui suit le scroll (parallax), --scroll-y posé par Home.js */
+  .scroll-gradient-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    pointer-events: none;
+    overflow: hidden;
+    transform: translateY(calc(var(--scroll-y, 0) * -0.12px));
+  }
+
+  .scroll-gradient-bg::before,
+  .scroll-gradient-bg::after {
+    content: '';
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    filter: blur(160px);
+    opacity: 0.32;
+  }
+
+  .scroll-gradient-bg::before {
+    top: -15%;
+    left: -15%;
+    background: var(--main-purple);
+  }
+
+  .scroll-gradient-bg::after {
+    bottom: -15%;
+    right: -15%;
+    background: var(--main-blue);
+  }
+
   .all-page{
-    
+
     position: relative;
     background-color: var(--blue-dark);
     display: flex;

@@ -15,6 +15,8 @@
 }
 
 .input-message{
+    position: relative;
+    z-index: 1;
     border-radius: 10px;
     background-color: transparent;
     font-size: clamp(12px, 1.5vw, 32px);
@@ -30,47 +32,52 @@
     background-color: transparent;
     border: none;
     position: relative;
+    z-index: 1;
     display: inline-block;
     font-size: 24px;
     color: #ddd;
     width: 17vw;
     padding: 10px;
-    
+
 }
 
 .input-div{
     margin: 20px;
     position: relative;
     display: inline-block;
-    border-radius: 50px; /* Appliquer le border-radius */
-    background-color: var(--blue-dark); /* Assurez-vous que le contenu est coupé aux bords arrondis */
+    border-radius: 50px;
+    background-color: transparent; /* opaque ici bloquerait le backdrop-filter de ::after */
     z-index: 30;
 }
+/* Anneau creux (mask) + vitre : même technique que ProjectCase.css. Pas de z-index négatif
+   (voir la note dans ProjectCase.css) : c'est l'input réel (.input-name/.input-mail/
+   .input-message) qui reçoit z-index:1 pour passer au-dessus, pas ces pseudo-éléments. */
 .input-div::before {
     content: "";
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border-radius: inherit; /* Angles arrondis pour le pseudo-élément */
+    inset: -2px;
+    border-radius: inherit;
     background: var(--gradient);
-    z-index: -2; /* Place le pseudo-élément derrière */
+    padding: 2px;
+    box-sizing: border-box;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .input-div::after {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: inherit; /* Angles arrondis pour le pseudo-élément */
-    background: var(--blue-dark);
-    padding: 2px; /* Crée l'espace pour la bordure */
-    box-sizing: border-box; /* Assure que le padding est inclus dans la taille */
-    z-index: -1; /* Place le pseudo-élément derrière */
-    
+    inset: 0;
+    border-radius: inherit;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)),
+        linear-gradient(rgba(0, 20, 18, 0.35), rgba(0, 20, 18, 0.35));
+    will-change: backdrop-filter;
+    backdrop-filter: blur(16px) saturate(180%);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 
@@ -78,44 +85,47 @@
     margin: 20px;
     position: relative;
     display: inline-block;
-    border-radius: 10px; /* Appliquer le border-radius */
-    background-color: var(--blue-dark); /* Assurez-vous que le contenu est coupé aux bords arrondis */
+    border-radius: 10px;
+    background-color: transparent;
     z-index: 30;
 }
+
 .input-div-mess::before {
     content: "";
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border-radius: inherit; /* Angles arrondis pour le pseudo-élément */
+    inset: -2px;
+    border-radius: inherit;
     background: var(--gradient);
-    z-index: -2; /* Place le pseudo-élément derrière */
+    padding: 2px;
+    box-sizing: border-box;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .input-div-mess::after {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: inherit; /* Angles arrondis pour le pseudo-élément */
-    background: var(--blue-dark);
-    padding: 2px; /* Crée l'espace pour la bordure */
-    box-sizing: border-box; /* Assure que le padding est inclus dans la taille */
-    z-index: -1; /* Place le pseudo-élément derrière */
-    
+    inset: 0;
+    border-radius: inherit;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)),
+        linear-gradient(rgba(0, 20, 18, 0.35), rgba(0, 20, 18, 0.35));
+    will-change: backdrop-filter;
+    backdrop-filter: blur(16px) saturate(180%);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 .input-mail{
-    
+
     width: 25vw;
 
     border-radius: 50px;
     background-color: transparent;
     border: none;
     position: relative;
+    z-index: 1;
     display: inline-block;
     font-size: 24px;
     color: #ddd;

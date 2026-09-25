@@ -14,30 +14,40 @@
 }
 
 
+/* L'anneau en dégradé est un VRAI anneau creux (mask), pas un disque plein masqué
+   visuellement : sinon le centre reste opaque et bloque le backdrop-filter de ::after,
+   qui ne verrait alors que ce disque au lieu du vrai fond de page derrière la carte.
+   Ni ::before ni ::after n'ont de z-index négatif : combiné à backdrop-filter, ce pattern
+   ne se composait pas du tout sur Firefox (carte rendue opaque, sans transparence). À la
+   place, ::before/::after restent à leur niveau naturel (auto) et c'est le VRAI CONTENU de
+   la carte (.title/.description/.link-contener) qui reçoit un z-index positif pour passer
+   au-dessus — même résultat visuel, sans z-index négatif nulle part. */
 .project-case::before {
     content: "";
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border-radius: inherit; /* Angles arrondis pour le pseudo-élément */
+    inset: -2px;
+    border-radius: inherit;
     background: var(--gradient);
-    z-index: -2; /* Place le pseudo-élément derrière */
+    padding: 2px;
+    box-sizing: border-box;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
 }
 
 .project-case::after {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: inherit; /* Angles arrondis pour le pseudo-élément */
-    background: var(--blue-dark);
-    padding: 2px; /* Crée l'espace pour la bordure */
-    box-sizing: border-box; /* Assure que le padding est inclus dans la taille */
-    z-index: -1; /* Place le pseudo-élément derrière */
+    inset: 0;
+    border-radius: inherit;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)),
+        linear-gradient(rgba(0, 20, 18, 0.35), rgba(0, 20, 18, 0.35));
+    will-change: backdrop-filter;
+    backdrop-filter: blur(16px) saturate(180%);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 .test{
     display:flex;
@@ -62,6 +72,8 @@
 
 
 .title{
+    position: relative;
+    z-index: 1;
     color: transparent;
     align-self: flex-start;
     margin-bottom: 1vw;
@@ -70,6 +82,8 @@
 }
 
 .description{
+    position: relative;
+    z-index: 1;
     font-weight: 300;
     text-align: left;
     margin-top: 5px;
@@ -98,21 +112,50 @@
 }
 
 .link{
+    position: relative;
+    display: inline-block;
     color: #fff;
     font-size: 22px;
     text-align: left;
     text-transform: uppercase;
     margin-bottom: 5px;
-    border: #eee solid 1px;
+    border: none;
     text-decoration: none;
-    padding: 7px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 7px 15px;
     border-radius: 50px;
-    background: var(--gradient);
-    transition: all 0.5s;
+    background-color: var(--blue-dark);
+    transition: color 0.5s;
     margin-right: 15px;
+    z-index: 1;
+}
 
+/* Anneau en dégradé (::before/::after) plutôt qu'un fill, pour rester cohérent
+   avec la technique utilisée partout ailleurs (icon-contener, project-case, button-sender) */
+.link::before{
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: inherit;
+    background: var(--gradient);
+    z-index: -2;
+}
+
+.link::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    background: var(--blue-dark);
+    padding: 2px;
+    box-sizing: border-box;
+    z-index: -1;
+    transition: background 0.5s;
 }
 
 .link-contener{
@@ -123,10 +166,16 @@
     align-items: flex-start;
 }
 
-.link:hover{
-    color: black;
-    background:  linear-gradient(150deg, var(--main-blue)  , var(--main-purple), var(--main-blue)) ;
-    transition: all 0.5s;
+/* hover:hover exclut le tactile : sans repère de souris, un état survolé resterait
+   "collé" après un tap (pas de vrai mouseleave sur écran tactile, Firefox Android inclus) */
+@media (hover: hover) and (pointer: fine) {
+    .link:hover{
+        color: black;
+    }
+
+    .link:hover::after{
+        background: linear-gradient(150deg, var(--main-blue), var(--main-purple), var(--main-blue));
+    }
 }
 
 @media  (max-width: 800px) {

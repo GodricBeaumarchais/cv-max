@@ -1,7 +1,7 @@
 import ProjectCase from "./ProjectCase"
 import "./css/ProjectList.css"
-import leftArrow from "../../image/left_arrow.svg"
-import rightArrow from "../../image/right_arrow.svg"
+const leftArrow = "/image/left_arrow.svg"
+const rightArrow = "/image/right_arrow.svg"
 import { useState } from "react"
 export default function ProjectList() {
 
@@ -17,7 +17,6 @@ export default function ProjectList() {
         let i = 0
         let j = 0
         list.forEach((item) => {
-            console.log(item)
             if (i < 3) {
 
                 batch.push(item)
@@ -36,20 +35,16 @@ export default function ProjectList() {
 
     const batchedList = batcher(list)
 
-    console.log(batchedList)
-
     const nextBatch = () => {
         if (batch < batchedList.length - 1) {
             setBatch(batch + 1)
         }
-        console.log(getOffset())
     }
 
     const prevBatch = () => {
         if (batch > 0) {
             setBatch(batch - 1)
         }
-        console.log(getOffset())
     }
 
     const getOffset = () => {
@@ -75,7 +70,6 @@ export default function ProjectList() {
     }
 
 
-    console.log(getOffset())
     return (
         <div className="project-part-contener-list" >
             <div className="project-part-contener-slider">
@@ -84,7 +78,7 @@ export default function ProjectList() {
                     <div className="p-list" style={{ transform: `translateX(-${getOffset()}%)` }}>
                         {list.map((item) =>
 
-                            <ProjectCase title={item.title} def={item.description} Presentation={item.presentation} Git={item.git} Site={item.site} />)}
+                            <ProjectCase key={item.id} title={item.title} def={item.description} Presentation={item.presentation} Git={item.git} Site={item.site} />)}
                     </div>
                 </div>
                 <img src={rightArrow} alt="right arrow" className={rightArrowState()} onClick={nextBatch} />

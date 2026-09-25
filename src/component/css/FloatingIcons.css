@@ -1,0 +1,44 @@
+/* Enregistrée comme <length> animable : le navigateur peut interpoler --float-y en douceur
+   dans les keyframes, pendant que le parallax de scroll s'ajoute par-dessus dans transform. */
+@property --float-y {
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 0px;
+}
+
+.floating-icon {
+    position: absolute;
+    color: var(--main-blue);
+    opacity: 0.16;
+    pointer-events: none;
+    /* Pas de z-index négatif : les icônes sont déjà les premiers enfants de .Body-body
+       dans le DOM, elles se peignent donc naturellement derrière tout le reste (ordre
+       de peinture normal). Un z-index négatif ici provoquait un bug de rendu (contenu
+       jamais peint) constaté aussi bien en automatisation qu'en navigateur réel. */
+    will-change: transform;
+    --depth: 0.1;
+    /* --scroll-y est posé sur <html> par Home.js ; --depth varie par icône (voir FloatingIcons.js)
+       pour un vrai effet de profondeur au lieu d'un décor plat qui scrolle en bloc. */
+    transform: rotate(var(--rotate, 0deg))
+        translateY(calc(var(--float-y, 0px) + (var(--scroll-y, 0) * var(--depth) * -1px)));
+    animation: float-icon 9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-icon {
+        animation: none;
+    }
+}
+
+.floating-icon:nth-child(even) {
+    color: var(--main-purple);
+}
+
+@keyframes float-icon {
+    0%, 100% {
+        --float-y: 0px;
+    }
+    50% {
+        --float-y: -24px;
+    }
+}

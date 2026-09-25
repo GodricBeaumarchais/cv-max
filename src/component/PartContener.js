@@ -10,7 +10,7 @@ export default function PartContener({ children, title }) {
                 {title}
             </h1>
                 {children}
-            
+            <div className="part-bloom" aria-hidden="true" />
         </div>
     )
 }

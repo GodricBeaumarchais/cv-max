@@ -43,9 +43,11 @@
 }
 
 
-.arrow-on:hover{
-    transform: scale(0.6);
-    cursor: pointer;
+@media (hover: hover) and (pointer: fine) {
+    .arrow-on:hover{
+        transform: scale(0.6);
+        cursor: pointer;
+    }
 }
 
 @media  (max-width: 1000px) {

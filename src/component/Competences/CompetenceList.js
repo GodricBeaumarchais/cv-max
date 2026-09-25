@@ -37,36 +37,40 @@ export default function CompetenceList(){
     return(
             <div className="competence-contener" >
                 <CompetenceInfo item={list[itemSelect]}  />
+                <h2 className="competence-category-title">Langages &amp; systèmes</h2>
                 <div className="anim-competence-contener">
                     {
                         systeme_et_langage.map((item) =>
-                            <CompetenceCase name={item.title} id={item.id} onClick={onClick} color={color(item.id)} />
+                            <CompetenceCase key={item.id} name={item.title} id={item.id} onClick={onClick} color={color(item.id)} />
                         )
                     }
                 </div>
+                <h2 className="competence-category-title">DevOps</h2>
                 <div className="anim-competence-contener">
                     {
                         devops.map((item) =>
-                            <CompetenceCase name={item.title} id={item.id} onClick={onClick} color={color(item.id)} />
+                            <CompetenceCase key={item.id} name={item.title} id={item.id} onClick={onClick} color={color(item.id)} />
                         )
                     }
                 </div>
+                <h2 className="competence-category-title">Backend</h2>
                 <div className="anim-competence-contener">
                     {
                         backend.map((item) =>
-                            <CompetenceCase name={item.title} id={item.id} onClick={onClick} color={color(item.id)} />
+                            <CompetenceCase key={item.id} name={item.title} id={item.id} onClick={onClick} color={color(item.id)} />
                         )
                     }
                 </div>
+                <h2 className="competence-category-title">Frontend</h2>
                 <div className="anim-competence-contener">
                     {
                         frontend.map((item) =>
-                            <CompetenceCase name={item.title} id={item.id} onClick={onClick} color={color(item.id)} />
+                            <CompetenceCase key={item.id} name={item.title} id={item.id} onClick={onClick} color={color(item.id)} />
                         )
                     }
                 </div>
             </div>
-        
+
     )
 }
 

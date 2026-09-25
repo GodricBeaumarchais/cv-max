@@ -1,5 +1,5 @@
 import "./nexTalentCase.css"
-import logo from "../../image/logo_card.svg"
+const logo = "/image/logo_card.svg"
 
 export default function TalentCase(props) {
 
@@ -14,12 +14,12 @@ export default function TalentCase(props) {
     
 
     return (
-        <div class="flip-card">
-            <div class={frontClassName()}>
-                <div class="flip-card-front">
-                    <img src={logo} alt="Avatar" className="logo-card"  /> 
+        <div className="flip-card">
+            <div className={frontClassName()}>
+                <div className="flip-card-front">
+                    <img src={logo} alt="Avatar" className="logo-card"  />
                 </div>
-                <div class="flip-card-back">
+                <div className="flip-card-back">
                     <div className="talent-case-header">
                         <h1 className="talent-case-title">{props.title}</h1>
                     </div>

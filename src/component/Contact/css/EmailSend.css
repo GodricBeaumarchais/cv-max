@@ -9,17 +9,78 @@
     margin-bottom: 1em;
 }
 
+.send-success{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: success-rise 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.send-success-badge{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    background: var(--gradient);
+    color: var(--blue-dark);
+    font-size: 20px;
+    animation: success-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes success-rise {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes success-pop {
+    0% {
+        transform: scale(0.4);
+    }
+    70% {
+        transform: scale(1.08);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .button-sender{
     border-radius: 50px;
     margin: 1vw;
-    font-size: 36px;
+    font-size: clamp(16px, 1.5vw, 22px);
     color: #ddd;
     padding: 1vw;
     position: relative;
     display: inline-block;
     border-radius: 50px;
     z-index: 30;
+    border: none;
+    background-color: transparent;
+    /* sans ce transparent, le fond bouton par défaut du navigateur masque l'anneau en dégradé
+       (::before/::after) et écrase le contraste texte/fond */
     transition: color 1s ease-in, background 1s ease-in;
+}
+
+.button-sender:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.text-error{
+    color: #ff5959;
+    font-size: 1vw;
+    text-align: center;
+    margin-top: 0.5em;
+    max-width: 25vw;
 }
 
 .button-sender::before {
@@ -50,15 +111,17 @@
     transition: background 1s ease-in;
 }
 
-.button-sender:hover::before {
-    background: #222;
-    cursor: pointer;
-}
+@media (hover: hover) and (pointer: fine) {
+    .button-sender:hover::before {
+        background: #222;
+        cursor: pointer;
+    }
 
-.button-sender:hover::after {
-    background: var(--gradient);
-}
+    .button-sender:hover::after {
+        background: var(--gradient);
+    }
 
-.button-sender:hover {
-    color: #222;
+    .button-sender:hover {
+        color: #222;
+    }
 }

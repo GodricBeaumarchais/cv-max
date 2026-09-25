@@ -7,6 +7,17 @@
     align-items: center;
 }
 
+.competence-category-title{
+    font-family: AllertaStencil;
+    font-weight: 400;
+    font-size: clamp(18px, 1.6vw, 24px);
+    color: #eee;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    align-self: center;
+    text-align: center;
+}
+
 
 .anim-competence-contener{
     display: inline-block;

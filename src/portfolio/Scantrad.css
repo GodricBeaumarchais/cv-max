@@ -33,8 +33,10 @@
     margin-bottom: 5px;
 }
 
-.link-portflio:hover{
-    color: rgb(255, 0, 0);
+@media (hover: hover) and (pointer: fine) {
+    .link-portflio:hover{
+        color: rgb(255, 0, 0);
+    }
 }
 
 .Portfolio-title{

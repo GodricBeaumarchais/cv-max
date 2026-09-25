@@ -9,6 +9,7 @@
 }
  
 .part-contener{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,6 +20,25 @@
     margin-left: 0px;
 }
 
+/* Bloom ambiant partagé par toutes les sections en PartContener, même technique que
+   Presentation/CompetencePart (blur + opacité), pour garder l'atmosphère sur tout le scroll */
+.part-bloom{
+    content: '';
+    position: absolute;
+    /* Masque radial au lieu de filter:blur (voir Presentation.css) : Firefox tronquait
+       le flou aux bords de la boîte au scroll. Boîte agrandie de 2×200px en compensation. */
+    top: calc(15% - 200px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(65vw + 400px);
+    height: calc(60% + 400px);
+    max-height: 900px;
+    opacity: 0.3;
+    background: linear-gradient(160deg, var(--main-purple) 0%, var(--main-blue) 100%);
+    mask-image: radial-gradient(closest-side, #000 20%, rgba(0, 0, 0, 0.45) 60%, transparent 100%);
+    z-index: -1;
+    pointer-events: none;
+}
 
 
 

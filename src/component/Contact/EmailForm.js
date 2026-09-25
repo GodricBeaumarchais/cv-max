@@ -21,10 +21,10 @@ function EmailForm(props) {
     setFormData({ ...formData, [name]: value });
   }
 
-  // Appelle la fonction `onSubmit` passée en propriété avec les données du formulaire
+  // Empêche le rechargement de la page si l'utilisateur valide avec Entrée ;
+  // l'envoi effectif est déclenché par EmailSender, qui vit dans ce <form>.
   function handleSubmit(event) {
     event.preventDefault();
-    props.onSubmit(formData);
   }
 
 
@@ -36,23 +36,23 @@ function EmailForm(props) {
           <div className="contact-form-case">
             <label htmlFor="name" className='label-mail'>Nom:</label>
             <div className='input-div'>
-              <input className='input-name' type="text" name="name" id="name" value={formData.name} onChange={handleInputChange} />
+              <input className='input-name' type="text" name="name" id="name" required minLength={2} value={formData.name} onChange={handleInputChange} />
             </div>
           </div>
           <div className="contact-form-case">
             <label htmlFor="email" className='label-mail'>Email:   </label>
             <div className='input-div'>
-              <input className='input-mail' type="email" name="email" id="email" value={formData.email} onChange={handleInputChange} />
+              <input className='input-mail' type="email" name="email" id="email" required value={formData.email} onChange={handleInputChange} />
             </div>
           </div>
           <div className='message-contener'>
             <label htmlFor="message" className='label-mail'>Message:</label>
             <div className='input-div-mess'>
-            <textarea className='input-message' name="message" id="message" value={formData.message} onChange={handleInputChange} />
+            <textarea className='input-message' name="message" id="message" required minLength={10} value={formData.message} onChange={handleInputChange} />
           </div>
           </div>
+          <EmailSender formData={formData} />
         </form>
-        <EmailSender formData={formData} />
       </div>
 
     </InView>

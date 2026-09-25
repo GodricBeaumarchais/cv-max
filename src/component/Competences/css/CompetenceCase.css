@@ -65,9 +65,11 @@
     pointer-events: none;
 }
 
-.icon-contener:hover {
-    transform: scale(1.1);
-    cursor: pointer;
+@media (hover: hover) and (pointer: fine) {
+    .icon-contener:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
 }
 
 .button-cc {

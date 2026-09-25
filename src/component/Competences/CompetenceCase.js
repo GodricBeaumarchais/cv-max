@@ -40,7 +40,7 @@ export default function CompetenceCase({ name, id, onClick, color }) {
     }
 
     return (
-        <button className='button-cc' onClick={() => onClick(id)} >
+        <button className='button-cc' onClick={() => onClick(id)} title={name} aria-label={name} >
             {iconContener()}
         </button>
     )
