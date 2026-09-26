@@ -17,7 +17,7 @@ function EmailSender(props) {
     }
     setError(null);
     setSending(true);
-    emailjs.send("service_vp9kva4", "template_05zy9yu", props.formData, "5lKPKuq7M-RF4mAqX")
+    emailjs.send(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, "template_05zy9yu", props.formData, "5lKPKuq7M-RF4mAqX")
       .then(() => {
         setSending(false);
         setEmailSent(true);
